@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{% for post in site.posts %}
+  {{ post.title | escape }}
+{% endfor %}
+
+{{site.news.count}}
+{% for news in site.news %}
+  {{ news.title | escape }}
+{% endfor %}
