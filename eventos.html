@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+
+{% assign events = (site.events) %}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="display-3">Eventos</h1>
+    </div>
+  </div>
+  {% for event in events %}
+  {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+  <div class="row">
+    <div class="col-lg-5">
+      {% if thecycle == "odd" %}
+        <div class="card">
+          <div class="card-block">
+            <h2 class="card-title">{{ event.title }}</h2>
+            <p  class="card-text">{{ event.start_date | date_to_string }} {{ event.starts_at }} - {{ event.ends_at }}</p>
+            <p  class="card-text">{{ event.place }}</p>
+            <p>{{ event.summary }}</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <div class="col-lg-2">
+      <div class="row">
+        <div class="col-xs-2 offset-xs-5" style="background-color: #38c4de; min-height: 18rem;">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      {% if thecycle == "even" %}
+      <div class="card">
+        <div class="card-block">
+          <h2 class="card-title">{{ event.title }}</h2>
+          <p  class="card-text">{{ event.start_date | date_to_string }} {{ event.starts_at }} - {{ event.ends_at }}</p>
+          <p  class="card-text">{{ event.place }}</p>
+          <p>{{ event.summary }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

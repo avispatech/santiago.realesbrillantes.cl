@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+@import 'https://fonts.googleapis.com/css?family=Droid+Serif';
+@import 'base';
+
+main.markdown-content {
+  
+  font-size: 20px; 
+  text-align: justify; 
+
+  h1 {
+    text-align: left;
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    background-color: transparent;
+    border: 1px solid #eceeef;
+
+    thead {
+      display: table-header-group;
+      vertical-align: middle;
+      border-color: inherit;
+
+      th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #eceeef;
+        border-bottom-width: 2px;
+      }
+    }
+
+    tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+    
+    td {
+      vertical-align: top;
+    }
+
+    tr {
+      display: table-row;
+      vertical-align: inherit;
+      border-color: inherit;
+    }
+
+    th, td {
+      padding: .75rem;
+      text-align: left;
+      border: 1px solid #eceeef;
+    }
+  }
+}

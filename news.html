@@ -2,11 +2,22 @@
 layout: default
 ---
 
-{% for post in site.posts %}
-  {{ post.title | escape }}
-{% endfor %}
-
-{{site.news.count}}
+2
+<ul>
 {% for news in site.news %}
-  {{ news.title | escape }}
+  <li>{{ news.title | escape }}</li>
 {% endfor %}
+</ul>
+Collections
+<ul>
+{% for coll in site.collections %}
+  <li>
+    {{ coll.label }}
+    <ul>
+      {% for page in coll.files %}
+      <li>{{ page }}</li>
+      {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>

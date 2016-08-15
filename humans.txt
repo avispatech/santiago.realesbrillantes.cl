@@ -1,0 +1,19 @@
+                            
+/* TEAM */
+                            
+Your title: Leonardo Luarte González
+Company: Avispa Tech
+Site: https://avispa.tech
+Twitter: @lomefin
+Location: Santiago, Chile.
+                         
+              
+/* THANKS */
+Name: name or url
+                            
+/* SITE */
+                            
+Last update: 2016/08/15 
+Standards: HTML5, CSS3, SASS, TypeScript.
+Components: Bootstrap, jQuery.
+Software: Jekyll, Grunt.

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/markdown.css" />
+    <meta name="description" content="{{site.description}}"/>
+    <meta name="author" content="Avispa.tech"/>
+    <link rel="author" href="humans.txt"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml" />
+    <script src="https://use.fontawesome.com/d716ad509f.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.4/css/tether.css">
+    {% include favicon.html %}
+    {% include analytics.html %}
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-fixed-top- bg-primary navbar-dark ">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/socios">Socios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/socios/reglamentos">Reglamentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/acerca">Acerca</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/noticias">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/eventos">Eventos</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="display-3">{{page.title}}</h1>
+          {% if page.version %}
+            <p class="text-muted">Versión: {{ page.version }}. Fecha: {{ page.date | date_to_string }}.</p>
+          {% endif %}
+        </div>
+        <main class="col-xs-12 col-lg-8 markdown-content">
+          {{ content }}
+        </main>
+        <aside class="col-lg-4 hidden-lg-down markdown-toc sticky" style="position: sticky;">
+        </aside>
+      </div>
+    </div>
+    {% if page.revisions %}
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8">
+          <h2>Historial de revisiones</h2>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Comentarios</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for revision in page.revisions %}
+              <tr>
+                <th>{{revision.version}}</th>
+                <td>{{revision.date}}</td>
+                <td>{{revision.author}}</td>
+                <td>{{revision.comments}}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+    <script src="/js/stickyfill.js"></script>
+    <script src="/js/markdown_toc.js"></script>
+  </body>
+
+</html>

@@ -30,5 +30,19 @@ exclude: ['node_modules',‘css’, ‘_scss’]
 keep_files: ['_site/css', 'css']
 include: ['_sass']
 
+defaults:
+  - scope:
+      path: "/socios/reglamentos/"
+      type: regulations
+    values:
+      layout: regulations
+
 collections:
-  - news
+  news:
+    foo: bar
+  regulations:
+    output: true
+  events:
+    foo: bar
+    presentation_date: "2016-01-01"
+    place: "TBD"
