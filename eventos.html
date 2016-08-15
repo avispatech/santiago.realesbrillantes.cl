@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-{% assign events = (site.events) %}
+{% assign events = (site.events | sort 'date'| inverse) %}
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
