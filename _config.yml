@@ -29,6 +29,9 @@ exclude: ['node_modules',‘css’, ‘_scss’]
 keep_files: ['_site/css', 'css']
 include: ['_sass']
 
+languages: ["es"]
+exclude_from_localizations: ["js", "images", "css", "icons","node_modules"]
+
 defaults:
   - scope:
       path: "/socios/reglamentos/"
@@ -45,3 +48,4 @@ collections:
     foo: bar
     presentation_date: "2016-01-01"
     place: "TBD"
+    start_date: "2016-01-01"

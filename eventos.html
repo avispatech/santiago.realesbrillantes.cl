@@ -1,16 +1,29 @@
 ---
 layout: default
 ---
+{% assign events = site.events %}
+{% assign sorted_events = events | sort: "start_date" | reverse %}
 
-
-{% assign events = (site.events | sort 'date'| inverse) %}
 <div class="container">
+  
   <div class="row">
     <div class="col-xs-12">
       <h1 class="display-3">Eventos</h1>
     </div>
   </div>
-  {% for event in events %}
+
+  <div class="row hidden-md-down">
+    <div class="col-lg-2 offset-lg-5">
+      <div class="row">
+        <div class="col-xs-2 offset-xs-5" style="background-color: #38c4de; min-height: 4rem;">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% for event in sorted_events %}
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
   <div class="row">
     <div class="col-lg-5">
@@ -26,7 +39,7 @@ layout: default
       {% endif %}
     </div>
     <div class="col-lg-2">
-      <div class="row">
+      <div class="row hidden-md-down">
         <div class="col-xs-2 offset-xs-5" style="background-color: #38c4de; min-height: 18rem;">
 
         </div>
