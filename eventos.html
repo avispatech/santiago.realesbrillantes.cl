@@ -5,10 +5,15 @@ layout: default
 {% assign sorted_events = events | sort: "start_date" | reverse %}
 
 <div class="container">
-  
+
   <div class="row">
     <div class="col-xs-12">
       <h1 class="display-3">Eventos</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Siempre puedes conocer más de nuestros eventos siguiendo a <a href="//fb.com/rbstgo" target="_blank">Reales Brillantes Santiago en Facebook</a>.
     </div>
   </div>
 
@@ -34,6 +39,7 @@ layout: default
             <p  class="card-text">{{ event.start_date | date_to_string }} {{ event.starts_at }} - {{ event.ends_at }}</p>
             <p  class="card-text">{{ event.place }}</p>
             <p>{{ event.summary }}</p>
+            <p> <a href="{{event.link}}" class="btn btn-primary">Más información</a></p>
           </div>
         </div>
       {% endif %}
@@ -53,6 +59,7 @@ layout: default
           <p  class="card-text">{{ event.start_date | date_to_string }} {{ event.starts_at }} - {{ event.ends_at }}</p>
           <p  class="card-text">{{ event.place }}</p>
           <p>{{ event.summary }}</p>
+          <p> <a href="{{event.link}}" class="btn btn-primary">Más información</a></p>
         </div>
       </div>
       {% endif %}
